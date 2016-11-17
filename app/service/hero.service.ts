@@ -3,6 +3,7 @@
  */
 import                      'rxjs/add/operator/toPromise';
 import {Injectable}         from '@angular/core';
+import { Optional }         from '@angular/core';
 import { Headers, Http }    from '@angular/http';
 
 import {Hero}               from "../model/hero"
@@ -20,9 +21,11 @@ export class HeroService {
 
     constructor(
         private http: Http,
-        private logger:LoggerService
+        private logger:LoggerService,
+        @Optional()private isAdmin:boolean
     ) {}
     http_getHeroes(): Promise<Hero[]> {
+        this.logger.log("start");
         return this.http.get(this.heroesUrl)
             .toPromise()
             .then(response => response.json().data as Hero[])
@@ -54,7 +57,7 @@ export class HeroService {
     }
 
     getHeroes(): Promise<Hero[]> {
-        this.logger.log("start");
+
         return Promise.resolve(HEROES);
     }
 

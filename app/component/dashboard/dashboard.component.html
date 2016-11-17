@@ -1,4 +1,5 @@
 <div class="grid grid-pad">
+    <div>{{user | json}}</div>
     <a *ngFor="let hero of heroes"  [routerLink]="['/detail', hero.id]"  class="col-1-4">
     <div class="module hero">
             <h4>{{hero.name}}</h4>

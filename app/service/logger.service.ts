@@ -8,7 +8,7 @@ export class LoggerService {
     public logs:string[]=[];
 
     constructor() {}
-    public log(message:string){
+    public log(message:any){
         this.logs.push(message);
         console.log(message);
     }

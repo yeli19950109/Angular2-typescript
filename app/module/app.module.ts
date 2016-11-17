@@ -9,6 +9,8 @@ import                          './rxjs-extensions';
 
 import  {AppRoutingModule}       from '../route/app-routing.module';
 import  {HeroService}            from '../service/hero.service';
+//import {UserService}              from '../service/user.service';
+//import {heroServiceProvider}      from'../service/hero.service.provider';
 import  {LoggerService}          from '../service/logger.service';
 import  {AppComponent}           from '../component/appstart/app.component';
 import  {HeroDetailComponent}    from '../component/herodetail/hero-detail.component';
@@ -45,6 +47,8 @@ import { InMemoryDataService }  from '../service/in-memory-data.service';
     //providers-服务的创建者 本模块把它们加入全局的服务表中 让它们在应用中的任何部分都可被访问到
     providers: [
         HeroService,
+        //UserService,
+        //heroServiceProvider,
         LoggerService
     ],
     //bootstrap-标识出应用的主视图(被称为根组件)它是所有其它视图的宿主 只有根模块才能设置 bootstrap 属性
